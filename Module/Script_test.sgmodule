@@ -8,8 +8,6 @@ URL-REGEX,^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad\?,REJECT
 
 
 [Script]
-# > 京粉转链     (api.m.jd.com)
-//京粉转链 = type=http-response,pattern=^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/jfConvert.js,use-local-host-item-for-proxy = true
 # > 微信屏蔽链接跳转     (weixin110.qq.com)
 微信屏蔽链接跳转 = type=http-response,requires-body=1,max-size=-1,pattern=^https?:\/\/weixin110\.qq\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi,script-path=https://raw.githubusercontent.com/HotKids/Rules/master/Script/weixin110.js
 # > 轻颜/蒸汽波/Ulike相机解锁VIP    (commerce-i18n-api.faceu.mobi, commerce-api.faceu.mobi, pay.wecut.com)
@@ -31,4 +29,4 @@ boxjsnet = type=http-request,pattern=^https?://boxjs.net,script-path=https://raw
 //快捷搜引擎https://raw.githubusercontent.com/githubdulong/Script/master/Surge/Q-Search_All_in_one.sgmodule
 
 [MITM]
-hostname = %APPEND% api.m.jd.com, weixin110.qq.com,trade-acs.m.taobao.com,commerce-i18n-api.faceu.mobi, commerce-api.faceu.mobi, pay.wecut.com,mp.weixin.qq.com，pan.baidu.com
+hostname = %APPEND%  weixin110.qq.com,trade-acs.m.taobao.com,commerce-i18n-api.faceu.mobi, commerce-api.faceu.mobi, pay.wecut.com,mp.weixin.qq.com，pan.baidu.com
