@@ -1,0 +1,39 @@
+#!name=Script
+#!desc=脚本合集
+#!system=ios
+
+[Rule]
+# > 微信公众号
+URL-REGEX,^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad\?,REJECT
+
+
+[Script]
+# > 京粉转链     (api.m.jd.com)
+//京粉转链 = type=http-response,pattern=^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/jfConvert.js,use-local-host-item-for-proxy = true
+# > 京东比价  (api.m.jd.com)
+//京东比价 = type=http-response,pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig),requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/jd_price.js
+# > 淘宝比价     (trade-acs.m.taobao.com )
+淘宝比价 = requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js,type=http-request,pattern=^http://.+/amdc/mobileDispatch 
+淘宝比价 = requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js,type=http-response,pattern=^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail 
+# > 微信屏蔽链接跳转     (weixin110.qq.com)
+微信屏蔽链接跳转 = type=http-response,requires-body=1,max-size=-1,pattern=^https?:\/\/weixin110\.qq\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi,script-path=https://raw.githubusercontent.com/HotKids/Rules/master/Script/weixin110.js
+# > 轻颜/蒸汽波/Ulike相机解锁VIP    (commerce-i18n-api.faceu.mobi, commerce-api.faceu.mobi, pay.wecut.com)
+//轻颜/蒸汽波/Ulike相机解锁VIP = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Script/qyxj.js,type=http-response,pattern=^https:\/\/commerce-.*api\.faceu\.mobi\/commerce\/v1\/subscription\/user_info
+# > Boxjs   （稳定版+测试版）
+//boxjscom = type=http-request,pattern=^https?://boxjs.com,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/chavy.box.js, requires-body=true, timeout=120
+boxjsnet = type=http-request,pattern=^https?://boxjs.net,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js, requires-body=true, timeout=120
+# > 微信公众号去广告     (mp.weixin.qq.com)
+//微信公众号去广告 = pattern=^(http|https):\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad，response-body="advertisement_num":\d,"advertisement_info":\[.+\], response-body="advertisement_num":0,"advertisement_info":[]
+微信公众号去广告 = type=http-response,requires-body=1,max-size=-1,pattern=^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/Wechat.js
+# > 百度云 by ddgksf2013     （pan.baidu.com）
+百度云 = type=http-response,pattern=https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user,response-body=1,script-path=https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Crack/bdcloud.js
+# > 模块订阅(单独添加)
+//爬虫复写去广告 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Surge/Advertising/Advertising.sgmodule
+//爬虫脚本去广告 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Surge/AdvertisingScript/AdvertisingScript.sgmodule
+//知乎网页https://raw.githubusercontent.com/githubdulong/Script/master/Zhihu.sgmodule
+//京东跳转销卡https://raw.githubusercontent.com/githubdulong/Script/master/Jd_unbindCard.sgmodule
+//京东账号辅助https://raw.githubusercontent.com/githubdulong/Script/master/jd_login_help2.sgmodule
+//快捷搜引擎https://raw.githubusercontent.com/githubdulong/Script/master/Surge/Q-Search_All_in_one.sgmodule
+
+[MITM]
+hostname = %APPEND% api.m.jd.com, weixin110.qq.com,trade-acs.m.taobao.com,commerce-i18n-api.faceu.mobi, commerce-api.faceu.mobi, pay.wecut.com,mp.weixin.qq.com，pan.baidu.com
