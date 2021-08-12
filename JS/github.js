@@ -17,12 +17,13 @@
  * 📌 如果希望监控Release，请切换至Release界面，直接复制URL填入；
  */
 
-let token = "784a03feb07989d3339dfa41c7eb41777436cbfa";
+let token = "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";
 
 let repositories = [
     {
-        name: "NZW9314 脚本",
-        url: "https://github.com/nzw9314/QuantumultX/tree/master",
+        name: "@githubdulong",
+        file_names: ["Surge/Script.sgmodule", "wb_launch.js"],
+        url: "https://github.com/githubdulong/Script/tree/master",
     },
     {
         name: "ClashX",
