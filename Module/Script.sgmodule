@@ -127,6 +127,15 @@ URL-REGEX,^https:\/\/api\.wfdata\.club\/v2\/yesfeng\/(infoCenterAd|yesList),REJE
 代理选择 = type=generic,timeout=15,script-path=https://raw.githubusercontent.com/fishingworld/something/main/groupPanel.js,argument=icon=bolt.circle&color=#157EFB&group=𝗣𝗥𝗢𝗫𝗬
 
 # 分割线——————————————————————————
+[Header Rewrite]
+# 知乎（部分替换为手机百度 Quark 的 User-Agent） （www.zhihu.com）
+http-request ^https?:\/\/www\.zhihu\.com header-replace-regex User-Agent .+iPhone.+ "Mozilla/5.0 (iPhone; CPU iPhone OS 13_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/16C50 Quark/604.1 T7/10.3 SearchCraft/2.6.3 (Baidu; P1 8.0.0)"
+# 百度（全站替换为手机百度 Quark 的 User-Agent） （*.baidu.com）
+http-request ^https?:\/\/(?!d\.pcs).*(?<!map)\.baidu\.com header-replace-regex User-Agent .+iPhone.+ "Mozilla/5.0 (iPhone; CPU iPhone OS 13_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/16C50 Quark/604.1 T7/10.3 SearchCraft/2.6.3 (Baidu; P1 8.0.0)"
+
+
+# 分割线——————————————————————————
+
 
 # > 模块订阅(单独添加)
 //官方模块 https://raw.githubusercontent.com/githubdulong/Script/master/Surge/Surge.sgmodule
@@ -150,4 +159,4 @@ URL-REGEX,^https:\/\/api\.wfdata\.club\/v2\/yesfeng\/(infoCenterAd|yesList),REJE
 # 分割线——————————————————————————
 
 [MITM]
-hostname = %INSERT% -*.amemv.com, -*.snssdk.com, *.googlevideo.com,  ap*.intsig.net, ios-*.prod.ftl.netflix.com,ios.prod.ftl.netflix.com, *.lagoapps.com, biz.caiyunapp.com, raw.githubusercontent.com, ap?.bilibili.com, ap?.biliapi.net, pan.baidu.com, btrace.qq.com, *.tiktokv.com,*.byteoversea.com,*.tik-tokapi.com, security.wechat.com, api.polaxiong.com, m.douban.com, api.m.jd.com, gab.122.gov.cn, api-mifit-cn2.huami.com, as.xiaojukeji.com, pt-starimg.didistatic.com, security.xiaojukeji.com, guard.sec.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, res.xiaojukeji.com, shop-gw.chengxinyouxuan.com, img-ys011.didistatic.com, wallet.95516.com, pgdt.gtimg.cn, c.l.qq.com, api.daoshang.online, api.wfdata.club, bkw-legacy.oss-cn-shenzhen.aliyuncs.com, edith.xiaohongshu.com, boxjs.net, boxjs.com,trade-acs.m.taobao.com
+hostname = %INSERT% -*.amemv.com, *.baidu.com, www.zhihu.com, -*.snssdk.com, *.googlevideo.com,  ap*.intsig.net, ios-*.prod.ftl.netflix.com,ios.prod.ftl.netflix.com, *.lagoapps.com, biz.caiyunapp.com, raw.githubusercontent.com, ap?.bilibili.com, ap?.biliapi.net, pan.baidu.com, btrace.qq.com, *.tiktokv.com,*.byteoversea.com,*.tik-tokapi.com, security.wechat.com, api.polaxiong.com, m.douban.com, api.m.jd.com, gab.122.gov.cn, api-mifit-cn2.huami.com, as.xiaojukeji.com, pt-starimg.didistatic.com, security.xiaojukeji.com, guard.sec.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, res.xiaojukeji.com, shop-gw.chengxinyouxuan.com, img-ys011.didistatic.com, wallet.95516.com, pgdt.gtimg.cn, c.l.qq.com, api.daoshang.online, api.wfdata.club, bkw-legacy.oss-cn-shenzhen.aliyuncs.com, edith.xiaohongshu.com, boxjs.net, boxjs.com,trade-acs.m.taobao.com
