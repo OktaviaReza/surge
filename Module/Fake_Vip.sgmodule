@@ -1,0 +1,30 @@
+#!name=脚本合集
+#!desc=最后更新时间 2022-05-2 8:22
+#!system=ios
+
+[Script]
+
+#轻颜相机 蒸汽波相机 （解锁VIP）公用 (commerce-i18n-api.faceu.mobi,commerce-api.faceu.mobi, pay.wecut.com)
+轻颜相机 = type=http-response,requires-body=1,pattern=https://(commerce-.*api|pay).(faceu|wecut).(com|mobi)/(commerce|apple)/(iosAppVerifyReceipt.php|v1/subscription/user_info),script-path=https://gjds.vip/QX/pojie/qyxj.js
+
+#wps (account.wps.cn)
+wps = type=http-response,requires-body=1,pattern=h^https?:\/\/account\.wps\.cn\/api\/users,script-path=https://gjds.vip/QX/pojie/wps.js
+
+#pillow (api.revenuecat.com)
+pillow = type=http-response,requires-body=1,pattern=h^https:\/\/api\.revenuecat\.com\/v1\/subscribers.+,script-path=https://gjds.vip/QX/pojie/pillow.js
+
+#百度网盘   (pan.baidu.com
+)
+百度网盘 = type=http-response,requires-body=1,pattern=https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/membership\/user,script-path=https://gjds.vip/QX/pojie/bdwp.js
+
+#幕布 vip   (api2.mubu.com)
+幕布 = type=http-response,requires-body=1,pattern=^https:\/\/api2.mubu.com\/v3\/api\/user/*,script-path=https://gjds.vip/QX/pojie/mubu.js
+
+#VUE 解锁会员pro    (api.vuevideo.net)
+VUE = type=http-response,requires-body=1,pattern=^https:\/\/api\.vuevideo\.net\/api\/v1\/(users\/.+\/profile|subtitle\/prepare),script-path=https://gjds.vip/QX/pojie/vue.js
+
+
+[MITM]
+
+hostname = %INSERT% commerce-i18n-api.faceu.mobi,commerce-api.faceu.mobi, pay.wecut.com,account.wps.cn,api.revenuecat.com,pan.baidu.com
+,api2.mubu.com,api.vuevideo.net
