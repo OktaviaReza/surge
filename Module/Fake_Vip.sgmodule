@@ -26,5 +26,4 @@ VUE = type=http-response,requires-body=1,pattern=^https:\/\/api\.vuevideo\.net\/
 
 [MITM]
 
-hostname = %INSERT% commerce-i18n-api.faceu.mobi,commerce-api.faceu.mobi, pay.wecut.com,account.wps.cn,api.revenuecat.com,pan.baidu.com
-,api2.mubu.com,api.vuevideo.net
+hostname = %INSERT% commerce-i18n-api.faceu.mobi,commerce-api.faceu.mobi, pay.wecut.com,account.wps.cn,api.revenuecat.com,pan.baidu.com,api2.mubu.com,api.vuevideo.net
