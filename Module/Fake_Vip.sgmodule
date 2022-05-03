@@ -13,8 +13,7 @@ wps = type=http-response,requires-body=1,pattern=h^https?:\/\/account\.wps\.cn\/
 #pillow (api.revenuecat.com)
 pillow = type=http-response,requires-body=1,pattern=h^https:\/\/api\.revenuecat\.com\/v1\/subscribers.+,script-path=https://gjds.vip/QX/pojie/pillow.js
 
-#百度网盘   (pan.baidu.com
-)
+#百度网盘   (pan.baidu.com)
 百度网盘 = type=http-response,requires-body=1,pattern=https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/membership\/user,script-path=https://gjds.vip/QX/pojie/bdwp.js
 
 #幕布 vip   (api2.mubu.com)
