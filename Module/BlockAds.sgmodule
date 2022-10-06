@@ -1,0 +1,40 @@
+
+# ======= D ======= #
+# 豆瓣 //api.douban.com
+URL-REGEX,^https?:\/\/api\.douban\.com\/v\d\/app_ads\/,REJECT
+URL-REGEX,^https?:\/\/api\.douban\.com\b.*\/common_ads\?.*,REJECT
+
+# ======= E ======= #
+# 饿了么 //elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com
+URL-REGEX,^https?:\/\/elemecdn.com\/.+\/sitemap,REJECT
+URL-REGEX,^https?:\/\/fuss10.elemecdn.com\/.+\/w\/640\/h\/\d{3,4},REJECT
+URL-REGEX,^https?:\/\/fuss10.elemecdn.com\/.+\/w\/750\/h\/\d{3,4},REJECT
+URL-REGEX,^https?:\/\/fuss10.elemecdn.com\/.+.mp4,REJECT
+URL-REGEX,^https?:\/\/www1.elecfans.com\/www\/delivery\/,REJECT
+
+
+# ======= G ====== #
+# 高德地图 //*.amap.com
+URL-REGEX,^https?:\/\/m\d\.amap\.com/ws/message/notice/list?,REJECT-TINYGIF
+URL-REGEX,^https?:\/\/sns\.amap\.com\/ws\/msgbox\/pull?,REJECT-TINYGIF
+URL-REGEX,^https?:\/\/amap-aos-info-nogw\.amap\.com\/ws\/aos\/alimama\/,REJECT-TINYGIF
+URL-REGEX,^https?:\/\/m\d\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\/,REJECT
+URL-REGEX,^https?:\/\/optimus-ads\.amap\.com\/uploadimg\/,REJECT-TINYGIF
+URL-REGEX,^https?:\/\/render-oss-cdn\.amap\.com\/render\/studio-dev\/image\/,REJECT-TINYGIF
+
+# ======= J ====== #
+# 简书跳过重定向页面以直接访问 //links.jianshu.com, www.jianshu.com
+URL-REGEX,^https:\/\/links\.jianshu\.com\/go\?to= url script-echo-response https://gitlab.com/RuCu6/QuanX/-/raw/main/Scripts/no_redirect.js
+URL-REGEX,^https:\/\/www\.jianshu\.com\/go-wild\?ac=\d&url= url script-echo-response https://gitlab.com/RuCu6/QuanX/-/raw/main/Scripts/no_redirect.js
+# 京东 //api.m.jd.com
+URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start url script-response-body https://gitlab.com/RuCu6/QuanX/-/raw/main/Scripts/startup.js
+URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=queryMaterialAdverts url REJECT
+URL-REGEX,^https?:\/\/(bdsp-x|dsp-x)\.jd\.com\/adx\/ url REJECT
+URL-REGEX,^https?:\/\/ms\.jr\.jd\.com\/gw\/generic\/(aladdin|base)\/(new)?na\/m\/(getLoadingPicture|adInfo) url REJECT
+# 京东极速版 //api.m.jd.com
+URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising url response-body jdLiteAdvertisingVO response-body rucu6
+# 交管12123 //gab.122.gov.cn
+URL-REGEX,^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery url REJECT
+
+
+
