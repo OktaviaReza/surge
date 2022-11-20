@@ -1,0 +1,34 @@
+[Script]
+
+
+# ✅ 一言(need登录) （app.yiyan.art）
+yiyan = type=http-response,pattern=^https:\/\/app\.yiyan\.art\/yiyan\/,requires-body=1,max-size=0,script-path=https://ocd0522.tk/ddgksf2013/Cuttlefish/raw/branch/master/Crack/yiyan.js
+# ✅ 西窗烛(need登录) （lchttpapi.xczim.com）
+xcz = type=http-response,pattern=https://lchttpapi.xczim.com/*,requires-body=1,max-size=0,script-path=https://ocd0522.tk/ddgksf2013/Cuttlefish/raw/branch/master/Crack/xcz.js
+
+
+
+# ✅ 财新周刊 gateway.caixin.com,
+cxzk = type=http-response,pattern=http://ipadcms.caixin.com/tmp/articles/*,requires-body=1,max-size=0,script-path=https://ocd0522.tk/ddgksf2013/Cuttlefish/raw/branch/master/Crack/cxzk.js
+# ✅ 财新(会员共享)[vip至2023-06-06]
+#CaiXin = type=http-request,pattern=^https?:\/\/gateway\.caixin\.com\/api\/app\-api\/auth\/(validate|validateAudioAuth),requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/CaiXin/Script/CaiXin.js
+
+# ✅ 克拉壁纸
+clarity = type=http-response,pattern=^https:\/\/claritywallpaper\.com\/clarity\/api\/(userInfo|special\/queryByCatalogAll),requires-body=1,max-size=0,script-path=https://ocd0522.tk/ddgksf2013/Cuttlefish/raw/branch/master/Crack/clarity.js
+# ✅ Picsart
+picsart = type=http-response,pattern=^https?:\/\/api\.meiease\.cn\/shop\/subscription\/validate,requires-body=1,max-size=0,script-path=https://ocd0522.tk/ddgksf2013/Cuttlefish/raw/branch/master/Crack/picsart.js
+# ✅ TopWidgets
+topwidgets = type=http-response,pattern=^https?:\/\/.*xiaozujian\.com\/api\/app\/config\/userConfig,requires-body=1,max-size=0,script-path=https://ocd0522.tk/ddgksf2013/Cuttlefish/raw/branch/master/Crack/topwidgets.js
+# ✅ Notability
+notability = type=http-response,pattern=https://notability.com/subscriptions,requires-body=1,max-size=0,script-path=https://ocd0522.tk/ddgksf2013/Cuttlefish/raw/branch/master/Crack/notability.js
+# ✅ 百度网盘(倍速)
+bdcloud = type=http-response,pattern=https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/membership\/user,requires-body=1,max-size=0,script-path=https://ocd0522.tk/ddgksf2013/Cuttlefish/raw/branch/master/Crack/bdcloud.js
+# ✅ WPS(国区)
+Wps = type=http-response,pattern=^https?:\/\/[a-z-]*account\.wps\.c(n|om)(:\d+|)\/api\/users,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Wps.js
+# ✅ 扫描全能王
+camscanner = type=http-response,pattern=^https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\?,requires-body=1,max-size=0,script-path=https://ocd0522.tk/ddgksf2013/Cuttlefish/raw/branch/master/Crack/camscanner.js
+
+
+[mitm] 
+
+hostname=app.yiyan.art, lchttpapi.xczim.com, gateway.caixin.com, 
