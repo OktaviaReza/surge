@@ -3,16 +3,17 @@
 #!category=🍌 楼兰
 
 [Panel]
-策略面板 = script-name=解锁检测,update-interval=7200
+策略面板 = script-name=NetSpeed,update-interval=-1
+//策略面板 = script-name=解锁检测,update-interval=7200
 //策略面板 = script-name=WARP信息,update-interval=1800
 策略面板 = script-name=MisakaF,update-interval=1800
 策略面板 = script-name=夜煞云,update-interval=1800
 策略面板 = script-name=守候网络,update-interval=1800
-策略面板 = script-name=NetSpeed,update-interval=-1
+
 
 [Script]
 NetSpeed = type=generic,script-path=https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/modules/Panel/Net_Speed/Net_Speed.js,argument=title=NetSpeed&iconfast=bolt&iconmid=hare&iconslow=tortoise&colorlow=#06D6A0&colormid=#FFD166&colorhigh=#EF476F&mb=3
-解锁检测 = type=generic,timeout=30,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/Stream-All.js,script-update-interval=0,argument=title=解锁检测&icon=play.circle.fill&color=#FF2121
+//解锁检测 = type=generic,timeout=30,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/Stream-All.js,script-update-interval=0,argument=title=解锁检测&icon=play.circle.fill&color=#FF2121
 //WARP信息 = type=generic, timeout=15, script-path=https://raw.githubusercontent.com/VirgilClyne/Cloudflare/main/js/Cloudflare.1.1.1.1.panel.js,script-update-interval=0,argument=Title=WARP信息&Icon=icloud.circle.fill&IconColor=#EB5C20&Language=auto
 MisakaF = type=generic,timeout=15,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/sub_info_panel.js,script-update-interval=0,argument=url=http%3A%2F%2Fapi.aca.best%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D1f85a1afed900237f70015a2a7860e8c&reset_day=1&title=MisakaF&icon=shippingbox.circle.fill&color=#81AC7A
 夜煞云 = type=generic,timeout=15,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/sub_info_panel.js,script-update-interval=0,argument=url=https%3A%2F%2Fsub2.download-hiccup.xyz%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Db3067877e62dd217559d3ed70a46c871&reset_day=8&title=夜煞云&icon=pawprint.circle.fill&color=#1C6073
