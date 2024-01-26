@@ -19,4 +19,4 @@ MisakaF = type=generic,timeout=15,script-path=https://raw.githubusercontent.com/
 夜煞云 = type=generic,timeout=15,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/sub_info_panel.js,script-update-interval=0,argument=url=https%3A%2F%2Fsub2.download-hiccup.xyz%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Db3067877e62dd217559d3ed70a46c871&reset_day=8&title=夜煞云&icon=y.circle.fill&color=#1C6073
 守候网络 = type=generic,timeout=15,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/sub_info_panel.js,script-update-interval=0,argument=url=https%3A%2F%2Fsub.xttlove.uk%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D447a68303485fc3b934f96174c8b1899&reset_day=24&title=守候网络&icon=s.circle.fill&color=#1C6073
 
-//encode链接： https://www.urlencoder.org
+//encode链接： https://www.urlencoder.org//
