@@ -109,6 +109,13 @@ IP-CIDR,47.110.187.87/32,REJECT,no-resolve
 IP-CIDR,47.96.15.52/32,REJECT,no-resolve
 IP-CIDR,116.62.220.39/32,REJECT,no-resolve
 DOMAIN,ssp.soulapp.cn,REJECT
+# > 广发银行 （static.95508.com, unionsr.chinalifeonline.com.cn）
+# 广发银行 - 内页广告
+URL-REGEX, ^http:\/\/mps\.95508\.com\/mps\/icppweb\/images\/mps\/migration\/mpspics\/, REJECT
+# 广发银行 - 开屏广告、内页广告
+URL-REGEX, ^https:\/\/static\.95508\.com\/icppweb\/images\/modelMaterial\/advertising\/, REJECT
+# 广发银行 - 国寿联盟悬浮组件
+URL-REGEX, ^https:\/\/unionsr\.chinalifeonline\.com\.cn\/gslm\/upload\/, REJECT
 
 [Script]
 # > 扫描全能王 pro
@@ -145,4 +152,4 @@ EmbyPro = type=http-response,pattern=^https?:\/\/mb3admin.com\/admin\/service\/r
 # 快捷指令 https://www.icloud.com/shortcuts/5868566f85c542d3801778f8e72929e5
 
 [MITM]
-hostname = %APPEND% -*.amemv.com, -*.snssdk.com, ap*.intsig.net, *.lagoapps.com, api.meiyan.com, weixin110.qq.com, security.wechat.com, raw.githubusercontent.com, spclient.wg.spotify.com, btrace.qq.com, syh.zybang.com, security.wechat.com, m.douban.com, api.m.jd.com, gab.122.gov.cn, api-mifit-cn2.huami.com, as.xiaojukeji.com, pt-starimg.didistatic.com, security.xiaojukeji.com, guard.sec.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, res.xiaojukeji.com, shop-gw.chengxinyouxuan.com, img-ys011.didistatic.com, wallet.95516.com, api-daoshang.shiqiao.com, api.wfdata.club, sub.store, mb3admin.com, flowplus.meituan.net, m.360buyimg.com,  ios-*.prod.ftl.netflix.com,ios.prod.ftl.netflix.com, *.sf-express.com, api.pinduoduo.com, flowplus.meituan.net, s3plus.meituan.net, www.bing.com, security.wechat.com, biz.cyapi.cn, wrapper.cyapi.cn, ossgw.alicdn.com, raw.githubusercontent.com, gist.githubusercontent.com, boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net, testflight.apple.com, api.weibo.cn, script.hub, *.script.hub，
+hostname = %APPEND% -*.amemv.com, -*.snssdk.com, ap*.intsig.net, *.lagoapps.com, api.meiyan.com, weixin110.qq.com, security.wechat.com, raw.githubusercontent.com, spclient.wg.spotify.com, btrace.qq.com, syh.zybang.com, security.wechat.com, m.douban.com, api.m.jd.com, gab.122.gov.cn, api-mifit-cn2.huami.com, as.xiaojukeji.com, pt-starimg.didistatic.com, security.xiaojukeji.com, guard.sec.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, res.xiaojukeji.com, shop-gw.chengxinyouxuan.com, img-ys011.didistatic.com, wallet.95516.com, api-daoshang.shiqiao.com, api.wfdata.club, sub.store, mb3admin.com, flowplus.meituan.net, m.360buyimg.com,  ios-*.prod.ftl.netflix.com,ios.prod.ftl.netflix.com, *.sf-express.com, api.pinduoduo.com, flowplus.meituan.net, s3plus.meituan.net, www.bing.com, security.wechat.com, biz.cyapi.cn, wrapper.cyapi.cn, ossgw.alicdn.com, raw.githubusercontent.com, gist.githubusercontent.com, boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net, testflight.apple.com, api.weibo.cn, script.hub, *.script.hub, static.95508.com, unionsr.chinalifeonline.com.cn
