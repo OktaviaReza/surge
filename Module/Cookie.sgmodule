@@ -3,6 +3,8 @@
 #!category=🍌 楼兰
 
 [Script]
+# > ziwi vx小程序获取Cookie
+获取Cookie = type=http-request, pattern=^https:\/\/ziwixcx\.escase\.cn\/json-rpc\?__method=GetTaskList, script-path=https://raw.githubusercontent.com/anyehttp/quantumult-x/main/task/ziwi+.js
 # > 喜马拉雅 app获取
 喜马拉雅 = type=http-request,pattern=^https?:\/\/xmc\.ximalaya\.com\/xmlymain-login-web\/login\/,requires-body=0,script-path=https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/xmlySign.js
 # > 达乐美披萨 小程序获取
@@ -35,4 +37,4 @@
 哔站获取 = type=http-request, pattern=^https?:\/\/(app\.bilibili\.com\/x\/resource\/domain\?|m.bilibili.com\/$), script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js, requires-body=0
     
 [MITM]
-hostname = %APPEND% *.m.163.com, game.dominos.com.cn, c.tieba.baidu.com, tiebac.baidu.com, *.xxjjappss.com,*.*.mob.com,*.huaerdadi.com, user-api.smzdm.com, apph5.manmanbuy.com, account.huami.com, club.yili.com, passport.iqiyi.com, xmc.ximalaya.com, 180.153.255.*, 180.153.255.10*, 180.153.250.*, 114.80.99.*, 1.62.62.64, auth.alipan.com,auth.aliyundrive.com, ccsp-egmas.sf-express.com, yunbusiness.ccb.com, ms.jr.jd.com, me-api.jd.com, youhui.95516.com, app.moutai519.com.cn, app.bilibili.com, m.bilibili.com
+hostname = %APPEND% *.m.163.com, game.dominos.com.cn, c.tieba.baidu.com, tiebac.baidu.com, *.xxjjappss.com,*.*.mob.com,*.huaerdadi.com, user-api.smzdm.com, apph5.manmanbuy.com, account.huami.com, club.yili.com, passport.iqiyi.com, xmc.ximalaya.com, 180.153.255.*, 180.153.255.10*, 180.153.250.*, 114.80.99.*, 1.62.62.64, auth.alipan.com,auth.aliyundrive.com, ccsp-egmas.sf-express.com, yunbusiness.ccb.com, ms.jr.jd.com, me-api.jd.com, youhui.95516.com, app.moutai519.com.cn, app.bilibili.com, m.bilibili.com, ziwixcx.escase.cn 
