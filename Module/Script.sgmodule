@@ -1,157 +1,32 @@
 #!name=脚本合集
-#!desc=更新时间 2024-01-26 13:57
+#!desc=更新时间 2024-03-01 
 #!category=🍌 楼兰
 
-[Map Local]
-# 彩云天气 去广告
-^https:\/\/biz\.cyapi\.cn\/p\/v1\/entries\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-
-
 [General]
-# > 代理检测
-skip-proxy = %APPEND% www.baidu.com,yunbusiness.ccb.com,wxh.wo.cn,gate.lagou.com,www.abchina.com.cn,www.shanbay.com,login-service.mobile-bank.psbc.com,mobile-bank.psbc.com,iosapps.itunes.apple.com, script.hub, *.script.hub
-# > Boxjs
-force-http-engine-hosts = %APPEND% boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net
-# > HomeKit Accessories Quirk
-always-raw-tcp-keywords = %APPEND% "Content-Type: application/pairing+tlv8"
-
-[Rule]
-# > Gemini 美国代理
-DOMAIN,generativelanguage.googleapis.com,United States
-# > Jsbox Erots 商店代理
-DOMAIN,lc.liuguogy.com,Hong Kong 
-# > Safari 防跳转
-DOMAIN,app-site-association.cdn-apple.com,REJECT
-# > 爱奇艺 去广告
-DOMAIN-SUFFIX,cupid.iqiyi.com,REJECT
-# > 优酷 去广告
-DOMAIN, iyes.youku.com,REJECT
-URL-REGEX,^http:\/\/.*\.cp31\.ott\.cibntv\.net\/youku\/,REJECT-TINYGIF
-# > 京东 去广告
-URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(start|queryMaterialAdverts),REJECT
-URL-REGEX,^https:\/\/m\.360buyimg\.com\/mobilecms\/s\d{4}x\d{4},REJECT
-# > Boxjs 代理
-DOMAIN-KEYWORD,jsdelivr.net,Hong Kong
-DOMAIN-KEYWORD,i.pinimg.com,Hong Kong
-DOMAIN-KEYWORD,64.media.tumblr.com,Hong Kong
-# > Sub-Store 代理
-DOMAIN-KEYWORD,vercel.app,Hong Kong
-# > 腾讯视频 去开屏
-URL-REGEX,^https:\/\/ossgw\.alicdn\.com\/creatives-assets/prod/feupload/user,REJECT
-IP-CIDR,47.110.187.87/32,REJECT,no-resolve
-OR,((DOMAIN,pgdt.gtimg.cn), (AND,((USER-AGENT,live4iphoneRel*), (IP-CIDR,0.0.0.0/0,no-resolve)))),REJECT-DROP
-# > 掌阅 去广告
-URL-REGEX,^https?:\/\/ih2\.ireader\.com\/zyapi\/bookstore\/ad\/,REJECT-TINYGIF
-URL-REGEX,^https?:\/\/ih2\.ireader\.com\/zyapi\/self\/screen\/ad,REJECT-TINYGIF
-URL-REGEX,^https?:\/\/ih2\.ireader\.com\/zycl\/api\/ad\/,REJECT-TINYGIF
-# > 作业帮 去广告
-URL-REGEX,^https:\/\/syh\.zybang\.com\/com\/adx\/impress$,REJECT-TINYGIF
-# > HDOBOX 去广告
-DOMAIN-SUFFIX,applovin.com,REJECT
-DOMAIN-SUFFIX,applvn.com,REJECT
-# > 交管12123 去广告
-URL-REGEX,^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$,REJECT
-# > 小米运动 去广告 
-URL-REGEX,^https:\/\/api-mifit-cn2\.huami\.com\/discovery\/mi\/cards\/startpage_ad,REJECT
-# > 京东金融 去广告
-URL-REGEX,^https?:\/\/ms\.jr\.jd\.com\/gw\/generic\/aladdin\/(new)?na\/m\/getLoadingPicture,REJECT
-# > 滴滴出行 去广告
-//01 安全提示横幅
-URL-REGEX,^https:\/\/guard\.sec\.xiaojukeji\.com\/api\/guard\/psg\/v2\/getShieldStatus,REJECT
-//02 底部打车&代价推荐
-URL-REGEX,^https:\/\/conf\.diditaxi\.com\.cn\/one,REJECT
-//03 福利专区-金融服务-公交-骑车-滴滴乐园
-URL-REGEX,^https:\/\/conf\.diditaxi\.com\.cn\/nav\/widget,REJECT
-//04 主页 领任务
-URL-REGEX,^https:\/\/conf\.diditaxi\.com\.cn\/api\/(component|fusion|dynamicmodule|usercenter),REJECT
-URL-REGEX,^https:\/\/conf\.diditaxi\.com\.cn\/dynamic,REJECT
-//05 主页 非主流式悬浮挂件
-URL-REGEX,^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget,REJECT
-//06 商城
-URL-REGEX,^https:\/\/shop-gw\.chengxinyouxuan\.com\/(route|indexConfig|apolloConfig|getShopTuanInfos),REJECT
-//07 开屏广告
-URL-REGEX,^https:\/\/img-ys011\.didistatic\.com\/static,REJECT
-//08 骑行
-URL-REGEX,^https:\/\/pt-starimg\.didistatic\.com\/static,REJECT
-# > 云闪付 去广告
-URL-REGEX,^https:\/\/wallet\.95516\.com\/s\/wl\/icon\/long,REJECT
-# > 狮桥司机 去广告
-URL-REGEX,^https:\/\/api-daoshang\.shiqiao\.com\/cloud-common\/(startupPageNew|versionManger)\/(query$|isUpdate$),REJECT
-# > 威锋 去广告
-URL-REGEX,^https:\/\/api\.wfdata\.club\/v2\/yesfeng\/(infoCenterAd|yesList),REJECT
-# > 向日葵 去广告
-DOMAIN,dm.toutiao.com,REJECT
-DOMAIN-KEYWORD,upload-cdn.orayimg.com,REJECT
-DOMAIN,ddns.oray.com,REJECT
-DOMAIN,sl-tk.oray.com,REJECT
-DOMAIN,client-api.oray.com,REJECT
-DOMAIN,push.oray.com,REJECT
-DOMAIN-SUFFIX,offline-adv.oray.com,REJECT
-DOMAIN-KEYWORD,upload-cdn.orayimg.com-upload-activity,REJECT
-# > 美团 去广告
-URL-REGEX,^https:\/\/flowplus\.meituan\.net\/v1\/mss_\w+\/linglong\/\d+\.jpg$,REJECT
-URL-REGEX,^https:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$,REJECT
-# > 中国联通 去开屏
-DOMAIN-SUFFIX,m1.ad.10010.com,REJECT
-# > 中国电信 去开屏
-DOMAIN,ad.21cn.com,REJECT
-DOMAIN,ad.k.21cn.com,REJECT
-DOMAIN,admarket.21cn.com,REJECT
-DOMAIN,adshows.21cn.com,REJECT
-# > 顺丰速运 去开屏
-URL-REGEX,^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade,REJECT
-URL-REGEX,^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/ad\/,REJECT
-URL-REGEX,^https?:\/\/shopic\.sf-express\.com\/crm\/mobile\/common\/flashscreen,REJECT
-# > 拼多多 去开屏
-URL-REGEX,^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash,REJECT
-# > SOUL 去开屏
-IP-CIDR,47.110.187.87/32,REJECT,no-resolve
-IP-CIDR,47.96.15.52/32,REJECT,no-resolve
-IP-CIDR,116.62.220.39/32,REJECT,no-resolve
-DOMAIN,ssp.soulapp.cn,REJECT
+force-http-engine-hosts = %APPEND% boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net, script.hub, *.script.hub
 
 
 [Script]
-# Slidebox相册清理
-# hostname = *-slidebox-ios-prod.cloudfunctions.net
-Slidebox-相册清理 = type=http-response,pattern=^https?:\/\/.*-slidebox-ios-prod\.cloudfunctions\.net\/api.+,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/slidebox.js
-# > flomo （fl*app.com）
-flomo = type=http-response,pattern=^https:\/\/fl.*app\.com\/api\/v\d\/user\/me,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/lofo.js
-# Cubox-收藏阅读
-# hostname = cubox.*
-Cubox-收藏阅读 = type=http-response,pattern=^https?:\/\/cubox\.(pro|cc)\/c\/api\/userInfo,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Cb.js
-# > 扫描全能王 pro
-全能扫描 = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/id77/QuantumultX/master/Script/camscanner.js,type=http-response,pattern=https:\/\/(api|api-cs)*\.intsig\.net\/purchase\/cs\/query_property\?,script-update-interval=0
-# > 京东App 历史价格 
-京东比价 = type=http-response,requires-body=1,pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig),script-path=https://raw.githubusercontent.com/githubdulong/Script/master/jd_price.js
-# > 豆瓣电影 搜索
-豆瓣电影 = type=http-response,pattern=^https://m.douban.com/movie/subject/.+,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/Douban.js
-# > SUB订阅管理
-订阅管理 = type=http-request,pattern=^https?:\/\/sub\.store,script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store.min.js,requires-body=true,timeout=120,max-size=131072
-# > Emby 解锁
-EmbyPro = type=http-response,pattern=^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/Emby.js
-# > 奈飞评分
-奈飞评分 = type=http-request,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js
-奈飞评分 = type=http-response,requires-body=1,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js
-# > 彩云天气 解锁
-彩云天气 = type=http-response, pattern=^https:\/\/biz\.cyapi\.cn\/(p\/v1\/vip_info|v2\/user)|^https:\/\/wrapper\.cyapi\.cn\/v1\/activity\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/caiyun.js, requires-body=true, max-size=-1
-彩云天气 = type=http-request, pattern=^https:\/\/wrapper\.cyapi\.cn\/v1\/(nafp\/origin_images|satellite)\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/caiyun.js
-# > TF 账户管理
-内测管理 = type=http-request,pattern=^https:\/\/testflight\.apple\.com\/v\d\/(app|account|invite)s\/,requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/TestFlight/TestFlightAccount.js
-# > Boxjs
-会话管理 = type=http-request,pattern=^https?:\/\/(.+\.)?boxjs\.(com|net),script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js, requires-body=true, timeout=120
-# > VVebo 用户主页修复
+# > Boxjs  (boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net)
+BoxJs = type=http-request,pattern=^https?:\/\/(.+\.)?boxjs\.(com|net),script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js, requires-body=true, timeout=120
+
+# > Vvebo （api.weibo.cn）
 Vvebo-request = type=http-request,pattern=^https:\/\/api\.weibo\.cn\/2\/(users\/show\?|statuses\/user_timeline\?),requires-body=1,script-path=https://raw.githubusercontent.com/Keywos/rule/main/JS/vv.js
 Vvebo_response = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/profile\/statuses\/tab\?,requires-body=1,script-path=https://raw.githubusercontent.com/Keywos/rule/main/JS/vv.js
-# > Script-hub 解析转换
-前端配置 = type=http-request, pattern=^https?:\/\/script\.hub\/($|edit\/|reload), script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/script-hub.beta.js, timeout=300
-重写转换 = type=http-request, pattern=^https?:\/\/script\.hub\/file\/_start_\/.+type=(?:qx-rewrite|surge-module|loon-plugin|all-module), script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/Rewrite-Parser.beta.js, timeout=300
-规则转换 = type=http-request, pattern=^https?:\/\/script\.hub\/file\/_start_\/.+type=rule-set, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/rule-parser.beta.js, timeout=300
-脚本转换 = type=http-request, pattern=^https?:\/\/script\.hub\/convert\/, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/script-converter.beta.js, timeout=300
-# > 微信外链
-微信外链= type=http-response, pattern=^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weixin110.js, requires-body=true, max-size=-1, timeout=# > 本地模块
-# > 本地模块
-# 快捷指令 https://www.icloud.com/shortcuts/5868566f85c542d3801778f8e72929e5
+
+# > 微信外链 (weixin110.qq.com, security.wechat.com)
+微信外链= type=http-response, pattern=^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weixin110.js, requires-body=true, max-size=-1
+
+# > Script-hub 解析转换 (script.hub, *.script.hub)
+Script Hub: 前端 = type=http-request, pattern=^https?:\/\/script\.hub\/($|edit\/|reload), script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/script-hub.beta.js, timeout=300
+Script Hub: 重写转换 = type=http-request, pattern=^https?:\/\/script\.hub\/file\/_start_\/.+type=(?:qx-rewrite|surge-module|loon-plugin|all-module), script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/Rewrite-Parser.beta.js, timeout=300, argument=Notify={{{Notify}}}
+Script Hub: 规则集转换 = type=http-request, pattern=^https?:\/\/script\.hub\/file\/_start_\/.+type=rule-set, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/rule-parser.beta.js, timeout=300, argument=Notify={{{Notify}}}
+Script Hub: 脚本转换 = type=http-request, pattern=^https?:\/\/script\.hub\/convert\/, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/script-converter.beta.js, timeout=300
+
+# > Sub-Store 高级订阅管理工具(sub.store)
+Sub-Store =type=http-request,pattern=^https?:\/\/sub\.store\/((download)|api\/(preview|sync|(utils\/node-info))),script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-1.min.js,requires-body=true,timeout=120
+Sub-Store =type=http-request,pattern=^https?:\/\/sub\.store,script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-0.min.js,requires-body=true
+
 
 [MITM]
-hostname = %APPEND% -*.amemv.com, -*.snssdk.com, *-slidebox-ios-prod.cloudfunctions.net, cubox.*, ap*.intsig.net, *.lagoapps.com, api.meiyan.com, weixin110.qq.com, security.wechat.com, raw.githubusercontent.com, spclient.wg.spotify.com, btrace.qq.com, syh.zybang.com, security.wechat.com, m.douban.com, api.m.jd.com, gab.122.gov.cn, api-mifit-cn2.huami.com, as.xiaojukeji.com, pt-starimg.didistatic.com, security.xiaojukeji.com, guard.sec.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, res.xiaojukeji.com, shop-gw.chengxinyouxuan.com, img-ys011.didistatic.com, wallet.95516.com, api-daoshang.shiqiao.com, api.wfdata.club, sub.store, mb3admin.com, flowplus.meituan.net, m.360buyimg.com,  ios-*.prod.ftl.netflix.com,ios.prod.ftl.netflix.com, *.sf-express.com, api.pinduoduo.com, flowplus.meituan.net, s3plus.meituan.net, www.bing.com, security.wechat.com, biz.cyapi.cn, wrapper.cyapi.cn, ossgw.alicdn.com, raw.githubusercontent.com, gist.githubusercontent.com, boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net, testflight.apple.com, api.weibo.cn, script.hub, *.script.hub,fl*app.com
+hostname = %INSERT% boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net, api.weibo.cn, weixin110.qq.com, security.wechat.com, script.hub, *.script.hub, sub.store
