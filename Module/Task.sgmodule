@@ -1,21 +1,26 @@
 #!name=定时脚本
-#!desc=最后更新时间 2024-01-26 
+#!desc=最后更新时间 2024-04-01
 #!system=ios
 #!category=🍌 楼兰
 
 
 
 [Script]
-# > 雀巢会员
-雀巢会员俱乐部签到 = type=cron, cronexp=21 30 0 * * *, script-path=https://gist.githubusercontent.com/Sliverkiss/f533ada8d658a0cbbe4b2e791c3b0ac8/raw/be3d9b74fe1cde69e6d39b599e5526110c996958/nestle.js, timeout=60
+
+# > 蜜雪冰城
+蜜雪冰城 = type=cron,cronexp=15 0 * * *,timeout=60,script-path=https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js
+# > 龙湖天街
+龙湖天街 = type=cron,cronexp=15 0 * * *,timeout=60,script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/lhtj/lhtj.js, timeout=60
+# > 微付金币 
+微付金币 = type=cron,cronexp=30 0 * * *,timeout=60,script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/wechat_pay_coupon.js,script-update-interval=0
+# > 万达智慧商业
+万达智慧商业 = type=cron,cronexp=15 0 * * *,timeout=60,script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/wdzhsy/wdzhsy.js,script-update-interval=0
 # > 霸王别姬
 霸王别姬小程序签到 = type=cron, cronexp=20 0 * * *, script-path=https://gist.githubusercontent.com/Sliverkiss/4984f7f34d6df8bcdd1e13ecac4bba51/raw/bwcj.js, timeout=60
 # > 美团签到
 美团签到 = type=cron, cronexp=0 0 12 * * *", script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/meituan/meituan.js, timeout=60
 # > 高德打车
 高德打车 = type=cron,cronexp=0 0 0 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js,script-update-interval=0,timeout=30
-# > 达乐美披萨
-达乐美披萨 = type=cron,cronexp=10 0 * * *,script-path=https://gist.githubusercontent.com/Sliverkiss/6b4da0d367d13790a9fd1d928c82bdf8/raw/dlm.js,timeout=300
 # > 百度贴吧
 百度贴吧 = type=cron,cronexp=0 2 0 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_signin.js,script-update-interval=0,timeout=60
 # > 什么值得买
