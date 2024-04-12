@@ -5,16 +5,6 @@
 [General]
 force-http-engine-hosts = %APPEND% boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net, script.hub, *.script.hub
 
-[Map Local]
-# > 百度网盘_设置信息流@ddgksf2013（pan.baidu.com）
-^https?:\/\/pan\.baidu\.com\/act\/v\d\/(bchannel|welfare)\/list data-type=text data=" " status-code=200
-# > 百度网盘_通用广告@ddgksf2013
-^https?:\/\/pan\.baidu\.com\/rest\/.*\/pcs\/ad data-type=text data=" " status-code=200
-# > 百度网盘_活动推广@ddgksf2013
-^https?:\/\/pan\.baidu\.com\/act\/api\/activityentry data-type=text data=" " status-code=200
-
-
-
 
 [Script]
 # > Boxjs  (boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net)
@@ -37,17 +27,8 @@ Script Hub: 脚本转换 = type=http-request, pattern=^https?:\/\/script\.hub\/c
 Sub-Store =type=http-request,pattern=^https?:\/\/sub\.store\/((download)|api\/(preview|sync|(utils\/node-info))),script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-1.min.js,requires-body=true,timeout=120
 Sub-Store =type=http-request,pattern=^https?:\/\/sub\.store,script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-0.min.js,requires-body=true
 
-# > WPS会员+稻壳(*.docer.wps.cn, vipapi.wps.cn, account.wps.cn, drive.wps.cn)
-WPS超级会员 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/(drive|account)\.wps\.cn\/api\/(users|v3\/(spaces|mine\/vips)),script-path=https://raw.githubusercontent.com/ClydeTime/Surge/main/Script/WPS/wps.js
-稻壳会员时间 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/(client|userinfo)\.docer\.wps\.cn\/(android\/mb\/buy|user\/v1\/vip\_dl\_times),script-path=https://raw.githubusercontent.com/ClydeTime/Surge/main/Script/WPS/docer-time.js
-WPS稻壳会员 = type=http-request,requires-body=0,pattern=^https?:\/\/.+\.(docer.)?wps.cn\/(download\/v1\/ios|user\/v1\/vip|android\/mb\/buy|partner\/invoke\/usable|(api|rank)\/v1(\/mobile\/mb)?\/detail),script-path=https://raw.githubusercontent.com/ClydeTime/Surge/main/Script/WPS/docer.js
-
-# > 百度网盘_开屏广告@ddgksf2013（pan.baidu.com）
-baiduCloud.vip = type=http-response, pattern=^https?:\/\/pan\.baidu\.com\/api\/getsyscfg, script-path=https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.vip.js, requires-body=true, max-size=-1, timeout=60
-# > 百度网盘_会员权益@ddgksf2013
-baiduCloud.vip = type=http-response, pattern=^https:\/\/pan\.baidu\.com\/rest\/.*\/membership\/user\?app_id, script-path=https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.vip.js, requires-body=true, max-size=-1, timeout=60
 
 
 
 [MITM]
-hostname = %INSERT% boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net, api.weibo.cn, weixin110.qq.com, security.wechat.com, script.hub, *.script.hub, sub.store, *.docer.wps.cn, vipapi.wps.cn, account.wps.cn, drive.wps.cn, pan.baidu.com
+hostname = %INSERT% boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net, api.weibo.cn, weixin110.qq.com, security.wechat.com, script.hub, *.script.hub, sub.store, 
