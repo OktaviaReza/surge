@@ -7,7 +7,7 @@
 
 [Script]
 # > B站每日任务
-B站每日任务= type=cron,cronexp=30 7 * * *,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,wake-system=1,timeout=15
+B站每日任务= type=cron,cronexp=11 0 * * *,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,wake-system=1,timeout=15
 # > 蜜雪冰城
 蜜雪冰城 = type=cron,cronexp=15 0 * * *,timeout=60,script-path=https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js
 # > 龙湖天街
