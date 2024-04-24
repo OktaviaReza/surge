@@ -46,8 +46,10 @@
 # > BiliBiliCookie获取
 B站Cookie(APP) = type=http-request,pattern=^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\?,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,requires-body=0
 B站Cookie(网页) = type=http-request,pattern=^https?:\/\/m\.bilibili\.com/$,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,requires-body=0
+# > 夸克网盘签到获取token = type=http-request, pattern=^https:\/\/drive-m.quark.cn\/1\/clouddrive\/capacity\/growth\/sign.+, script-path=https://raw.githubusercontent.com/OktaviaReza/surge/master/JS/quarkcloud.js, timeout=10
+
 
 
 
 [MITM]
-hostname = %APPEND% *.m.163.com,mxsa.mxbc.net, app.bilibili.com, m.bilibili.com, payapp.weixin.qq.com, gw2c-hw-open.longfor.com, www.wandawic.com, game.dominos.com.cn, c.tieba.baidu.com, tiebac.baidu.com, *.xxjjappss.com,*.*.mob.com,*.huaerdadi.com, user-api.smzdm.com, apph5.manmanbuy.com, account.huami.com, club.yili.com, passport.iqiyi.com, xmc.ximalaya.com, 180.153.255.*, 180.153.255.10*, 180.153.250.*, 114.80.99.*, 1.62.62.64, auth.alipan.com,auth.aliyundrive.com, ccsp-egmas.sf-express.com, yunbusiness.ccb.com, ms.jr.jd.com, me-api.jd.com, youhui.95516.com, app.moutai519.com.cn, app.bilibili.com, m.bilibili.com, ziwixcx.escase.cn 
+hostname = %APPEND% *.m.163.com,mxsa.mxbc.net, app.bilibili.com, drive-m.quark.cn, m.bilibili.com, payapp.weixin.qq.com, gw2c-hw-open.longfor.com, www.wandawic.com, game.dominos.com.cn, c.tieba.baidu.com, tiebac.baidu.com, *.xxjjappss.com,*.*.mob.com,*.huaerdadi.com, user-api.smzdm.com, apph5.manmanbuy.com, account.huami.com, club.yili.com, passport.iqiyi.com, xmc.ximalaya.com, 180.153.255.*, 180.153.255.10*, 180.153.250.*, 114.80.99.*, 1.62.62.64, auth.alipan.com,auth.aliyundrive.com, ccsp-egmas.sf-express.com, yunbusiness.ccb.com, ms.jr.jd.com, me-api.jd.com, youhui.95516.com, app.moutai519.com.cn, app.bilibili.com, m.bilibili.com, ziwixcx.escase.cn 
