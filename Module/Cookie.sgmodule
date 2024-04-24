@@ -1,5 +1,5 @@
-#!name=重写获取
-#!desc=最后更新时间 2024-04-12
+#!name=🍌 重写获取
+#!desc=最后更新时间 2024-04-25
 #!category=🍌 楼兰
 
 [Script]
@@ -46,7 +46,8 @@
 # > BiliBiliCookie获取
 B站Cookie(APP) = type=http-request,pattern=^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\?,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,requires-body=0
 B站Cookie(网页) = type=http-request,pattern=^https?:\/\/m\.bilibili\.com/$,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,requires-body=0
-# > 夸克网盘签到获取token = type=http-request, pattern=^https:\/\/drive-m.quark.cn\/1\/clouddrive\/capacity\/growth\/sign.+, script-path=https://raw.githubusercontent.com/OktaviaReza/surge/master/JS/quarkcloud.js, timeout=10
+# > 夸克网盘签到
+夸克网盘签到获取token = type=http-request, pattern=^https:\/\/drive-m.quark.cn\/1\/clouddrive\/capacity\/growth\/sign.+, script-path=https://raw.githubusercontent.com/OktaviaReza/surge/master/JS/quarkcloud.js, timeout=10
 
 
 
