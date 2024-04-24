@@ -27,6 +27,14 @@ cron "10 0 * * *" script-path=quarkcloud.js, timeout=300, tag=夸克网盘签到
 http-request ^https:\/\/drive-m.quark.cn\/1\/clouddrive\/capacity\/growth\/sign.+ script-path=https://raw.githubusercontent.com/OktaviaReza/surge/master/JS/quarkcloud.js, timeout=10, tag=夸克网盘签到获取token
 [MITM]
 hostname =drive-m.quark.cn
+------------------------------------------
+Surge配置
+------------------------------------------
+[Script]
+夸克网盘签到 = type=cron, cronexp="10 0 * * *", script-path=quarkcloud.js, timeout=300
+夸克网盘签到获取token = type=http-request, pattern=^https:\/\/drive-m.quark.cn\/1\/clouddrive\/capacity\/growth\/sign.+, script-path=quarkcloud.js, timeout=10
+[MITM]
+hostname = %APPEND% drive-m.quark.cn
 
 ====================================
 ⚠️【免责声明】
