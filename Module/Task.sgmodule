@@ -1,14 +1,16 @@
 #!name=🍌 定时脚本
-#!desc=最后更新时间 2024-04-25
+#!desc=最后更新时间 2024-05-08
 #!system=ios
 #!category=🍌 楼兰
 
 
 
+
 [Script]
-# > 夸克网盘签到 = type=cron, cronexp="10 0 * * *", script-path=https://raw.githubusercontent.com/OktaviaReza/surge/master/JS/quarkcloud.js, timeout=300
+# > 奶茶多合一
+奶茶多合一 = type=cron,cronexp=10 0 * * *,script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js,wake-system=1,timeout=15
 # > B站每日任务
-B站每日任务= type=cron,cronexp=11 0 * * *,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,wake-system=1,timeout=15
+B站每日任务 = type=cron,cronexp=11 0 * * *,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,wake-system=1,timeout=15
 # > 蜜雪冰城
 蜜雪冰城 = type=cron,cronexp=15 0 * * *,timeout=60,script-path=https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js
 # > 龙湖天街
@@ -19,16 +21,12 @@ B站每日任务= type=cron,cronexp=11 0 * * *,script-path=https://raw.githubuse
 万达智慧商业 = type=cron,cronexp=15 0 * * *,timeout=60,script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/wdzhsy/wdzhsy.js,script-update-interval=0
 # > 霸王别姬
 霸王别姬小程序签到 = type=cron, cronexp=20 0 * * *, script-path=https://gist.githubusercontent.com/Sliverkiss/4984f7f34d6df8bcdd1e13ecac4bba51/raw/bwcj.js, timeout=60
-# > 美团签到
-美团签到 = type=cron, cronexp=0 0 12 * * *", script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/meituan/meituan.js, timeout=60
 # > 高德打车
 高德打车 = type=cron,cronexp=0 0 0 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js,script-update-interval=0,timeout=30
 # > 百度贴吧
 百度贴吧 = type=cron,cronexp=0 2 0 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_signin.js,script-update-interval=0,timeout=60
 # > 什么值得买
 值买签到 = type=cron,cronexp=30 2 0 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js,script-update-interval=0,timeout=60
-# > 伊利乳品
-伊利乳品 = type=cron,cronexp=0 4 0 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/yiLi.js,script-update-interval=0,timeout=30
 # > 阿里云盘
 阿里云盘 = type=cron,cronexp="0 6 0,2,4 * * *",wake-system=1,script-path=https://gist.githubusercontent.com/Sliverkiss/33800a98dcd029ba09f8b6fc6f0f5162/raw/aliyun.js,script-update-interval=0,timeout=240
 # > 顺丰速运
