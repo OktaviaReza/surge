@@ -1,5 +1,5 @@
 #!name=🍌 重写获取
-#!desc=最后更新时间 2024-05-08
+#!desc=最后更新时间 2024-06-26
 #!category=🍌 楼兰
 
 [Script]
@@ -32,6 +32,8 @@ B站Cookie(网页) = type=http-request,pattern=^https?:\/\/m\.bilibili\.com/$,sc
 # > 奶茶多合一 （webapi2.qmai.cn, webapi.qmai.cn, qmwebapi.qmai.cn）
 奶茶获取token = type=http-response, pattern=^https:\/\/(webapi|webapi2)\.qmai\.cn\/web\/seller\/(oauth\/flash-sale-login|account\/login-minp), script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js, requires-body=true, timeout=60
 奶茶获取token = type=http-request, pattern=^https:\/\/(webapi|webapi2|qmwebapi)\.qmai\.cn\/web\/(catering\/integral|cmk-center)\/sign\/(signIn|takePartInSign), script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js, requires-body=true, timeout=60
+# > 达美乐披萨获取token（game.dominos.com.cn）
+达美乐披萨获取token = type=http-request, pattern=^https:\/\/game\.dominos\.com\.cn\/.+\/game\/gameDone, script-path=https://gist.githubusercontent.com/Sliverkiss/6b4da0d367d13790a9fd1d928c82bdf8/raw/dlm.js, requires-body=true, timeout=10
 
 
 
