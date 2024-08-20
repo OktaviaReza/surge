@@ -1,5 +1,5 @@
 #!name=🍌 定时脚本
-#!desc=最后更新时间 2024-06-26
+#!desc=最后更新时间 2024-08-20
 #!system=ios
 #!category=🍌 楼兰
 
@@ -7,6 +7,8 @@
 
 
 [Script]
+# > 达美乐披萨
+达美乐披萨 = type=cron, cronexp="3 0 * * *", script-path=https://gist.githubusercontent.com/Sliverkiss/6b4da0d367d13790a9fd1d928c82bdf8/raw/dlm.js, timeout=300
 # > 奶茶多合一
 奶茶多合一 = type=cron,cronexp=10 0 * * *,script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js,wake-system=1,timeout=15
 # > B站每日任务
