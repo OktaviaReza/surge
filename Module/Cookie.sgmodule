@@ -3,36 +3,47 @@
 #!category=🍌 楼兰
 
 [Script]
-# > 百度贴吧 app获取
-贴吧获取 = type=http-request,pattern=^https?:\/\/(c\.tieba\.baidu\.com|180\.97\.\d+\.\d+)\/c\/s\/login,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_signin.js
-贴吧获取 = type=http-request,pattern=^https?:\/\/c\.tieba\.baidu\.com\/c\/s\/channelIconConfig,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_signin.js
-贴吧获取 = type=http-request,pattern=^https?:\/\/tiebac\.baidu\.com\/c\/u\/follow\/getFoldedMessageUserInfo,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_signin.js
-# > 什么值得买 app获取
-什么值买 = type=http-request,pattern=^https?:\/\/user-api\.smzdm\.com\/checkin$,requires-body=false,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js
-# > 高德打车 微信小程序获取
-高德打车 = type=http-response, pattern=^https:\/\/m5(-zb)?\.amap\.com\/ws\/yuece\/(act|openapi)\/(activity\/current\/)?query,requires-body=1,script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js
-# > 阿里云盘 app获取
-阿里云盘 = type=http-request,pattern=^https:\/\/(auth|aliyundrive)\.alipan\.com\/v2\/account\/token,requires-body=1,script-path=https://gist.githubusercontent.com/Sliverkiss/33800a98dcd029ba09f8b6fc6f0f5162/raw/aliyun.js
-# > 顺丰速运 app获取
+# > 阿里云盘 app获取 (auth.alipan.com,auth.aliyundrive.com)
+阿里云盘获取cookie = type=http-request, pattern=^https:\/\/(auth|aliyundrive)\.alipan\.com\/v2\/account\/token, script-path=https://gist.githubusercontent.com/Sliverkiss/33800a98dcd029ba09f8b6fc6f0f5162/raw/aliyun.js, requires-body=true, timeout=60
+
+# > 顺丰速运 app获取 (ccsp-egmas.sf-express.com)
 顺丰速运 = type=http-request,pattern=^https:\/\/ccsp-egmas.sf-express.com\/cx-app-member\/member\/app\/user\/universalSign,requires-body=1,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/sfexpress/sfexpress.cookie.js
-# > 哔哩哔哩 app获取+web
-哔站获取 = type=http-request, pattern=^https?:\/\/(app\.bilibili\.com\/x\/resource\/domain\?|m.bilibili.com\/$), script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js, requires-body=0
-# > 万达智慧商业
-万达智慧商业² = type=http-response,pattern=^https?:\/\/www\.wandawic\.com\/api\/foreground\/loginregister\/queryUser,requires-body=1,max-size=0,binary-body-mode=0,timeout=30,script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/wdzhsy/wdzhsy.js,script-update-interval=0
-# > 蜜雪冰城获取token 
+
+# > 哔哩哔哩 app获取+web (app.bilibili.com, m.bilibili.com)
+哔站获取  = type=http-request, pattern=^https?:\/\/(app\.bilibili\.com\/x\/resource\/domain\?|m.bilibili.com\/$), script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js, requires-body=0
+B站(APP) = type=http-request,pattern=^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\?,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,requires-body=0
+B站(网页) = type=http-request,pattern=^https?:\/\/m\.bilibili\.com/$,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,requires-body=0
+
+# > 蜜雪冰城获取token  (mxsa.mxbc.net)
 蜜雪冰城 = type=http-response, pattern=^https:\/\/mxsa\.mxbc\.net\/api\/v1\/customer\/info, script-path=https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js, requires-body=true, timeout=60
-# > 龙湖天街获取Cookie 
+
+# > 龙湖天街获取Cookie (gw2c-hw-open.longfor.com)
 龙湖天街 = type=http-request, pattern=^https?:\/\/gw2c\-hw\-open\.longfor\.com\/lmarketing\-task\-api\-mvc\-prod\/openapi\/task\/v1\/signature\/clock, script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/lhtj/lhtj.js, timeout=60
-# > 微付金币² 
-微付金币 = type=http-response,pattern=https:\/\/payapp\.weixin\.qq\.com\/coupon-center-user\/home\/login,requires-body=1,max-size=0,binary-body-mode=0,timeout=30,script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/wechat_pay_coupon.js,script-update-interval=0
 # > BiliBiliCookie获取
-B站Cookie(APP) = type=http-request,pattern=^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\?,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,requires-body=0
-B站Cookie(网页) = type=http-request,pattern=^https?:\/\/m\.bilibili\.com/$,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,requires-body=0
+
 # > 奶茶多合一 （webapi2.qmai.cn, webapi.qmai.cn, qmwebapi.qmai.cn）
 奶茶获取token = type=http-response, pattern=^https:\/\/(webapi|webapi2)\.qmai\.cn\/web\/seller\/(oauth\/flash-sale-login|account\/login-minp), script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js, requires-body=true, timeout=60
 奶茶获取token = type=http-request, pattern=^https:\/\/(webapi|webapi2|qmwebapi)\.qmai\.cn\/web\/(catering\/integral|cmk-center)\/sign\/(signIn|takePartInSign), script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js, requires-body=true, timeout=60
+
 # > 达美乐披萨获取token（game.dominos.com.cn）
 达美乐披萨获取token = type=http-request, pattern=^https:\/\/game\.dominos\.com\.cn\/.+\/game\/gameDone, script-path=https://gist.githubusercontent.com/Sliverkiss/6b4da0d367d13790a9fd1d928c82bdf8/raw/dlm.js, requires-body=true, timeout=10
 
+# > 夸克网盘 (coral2.quark.cn,drive-pc.quark.cn)
+夸克网盘获取token = type=http-response, pattern=^https:\/\/drive-pc\.quark\.cn\/1\/clouddrive\/file\/sort, script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, requires-body=true, timeout=60
+夸克网盘福利日常收录任务 = type=http-response, pattern=^https:\/\/coral2\.quark\.cn\/task\/trigger, script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, requires-body=true, timeout=60
+夸克网盘空间签到收录任务 = type=http-request, pattern=^https:\/\/coral2\.quark\.cn\/quark\/(carbon|welfare)\/(v1|v2)\/signIn, script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, requires-body=true, timeout=60
+夸克网盘睡眠打卡收录任务 = type=http-request, pattern=^https:\/\/coral2\.quark\.cn\/quark\/welfare\/v2\/sleep\/trigger, script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, requires-body=true, timeout=60
+# > 晓晓优选 (xxyx-client-api.xiaoxiaoyouxuan.com)
+晓晓优选 = type=http-response, pattern=^https:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/my, script-path=https://gist.githubusercontent.com/Sliverkiss/991a81be1fc8cf2a1937432be68f5521/raw/xxyx.js, requires-body=true, timeout=60
+# > 胖乖生活 (userapi.qiekj.com)
+胖乖生活 = type=http-request, pattern=^https:\/\/userapi\.qiekj\.com\/wechat\/unionId\/login, script-path=https://gist.githubusercontent.com/Sliverkiss/845cf469e4762afdc83c3949be006609/raw/pgsh.js, requires-body=true, timeout=60
+# > 奈雪 (tm-web.pin-dao.cn)
+奈雪点单获取token = type=http-request, pattern=^https:\/\/tm-web\.pin-dao\.cn\/user\/base-userinfo, script-path=https://gist.githubusercontent.com/Sliverkiss/4d0e9572b99530b7cb0e7298622aa2a9/raw/naixue.js, requires-body=true, timeout=60
+# > 泡泡玛特 (popvip.paquapp.com)
+泡泡玛特获取token = type=http-response, pattern=^https:\/\/popvip\.paquapp\.com\/miniapp\/v2\/wechat\/getUserInfo, script-path=https://gist.githubusercontent.com/Sliverkiss/3e1fe82fa18dbcff9b2ae7fdad7596a6/raw/ppmt.js, requires-body=true, timeout=60
+# > 小蚕霸王餐 (gw.xiaocantech.com)
+小蚕霸王餐 = type=http-response, pattern=^https:\/\/gw\.xiaocantech\.com\/rpc, script-path=https://gist.githubusercontent.com/Sliverkiss/250a02315f0a2c99f42da3b3573375c8/raw/xcbwc.js, requires-body=true, timeout=60
+
+
 [MITM]
-hostname = %APPEND% *.m.163.com,game.dominos.com.cn,webapi2.qmai.cn, webapi.qmai.cn, qmwebapi.qmai.cn, mxsa.mxbc.net, app.bilibili.com, drive-m.quark.cn, m.bilibili.com, payapp.weixin.qq.com, gw2c-hw-open.longfor.com, www.wandawic.com, game.dominos.com.cn, c.tieba.baidu.com, tiebac.baidu.com, *.xxjjappss.com,*.*.mob.com,*.huaerdadi.com, user-api.smzdm.com, apph5.manmanbuy.com, account.huami.com, club.yili.com, passport.iqiyi.com, xmc.ximalaya.com, 180.153.255.*, 180.153.255.10*, 180.153.250.*, 114.80.99.*, 1.62.62.64, auth.alipan.com,auth.aliyundrive.com, ccsp-egmas.sf-express.com, yunbusiness.ccb.com, ms.jr.jd.com, me-api.jd.com, youhui.95516.com, app.moutai519.com.cn, app.bilibili.com, m.bilibili.com, ziwixcx.escase.cn 
+hostname = %APPEND% auth.alipan.com,auth.aliyundrive.com,ccsp-egmas.sf-express.com,mxsa.mxbc.net,gw2c-hw-open.longfor.com,webapi2.qmai.cn, webapi.qmai.cn, qmwebapi.qmai.cn,game.dominos.com.cn,coral2.quark.cn,drive-pc.quark.cn,xxyx-client-api.xiaoxiaoyouxuan.com,userapi.qiekj.com,tm-web.pin-dao.cn,popvip.paquapp.com,gw.xiaocantech.com
