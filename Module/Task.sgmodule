@@ -1,5 +1,5 @@
 #!name=🍌 定时脚本
-#!desc=最后更新时间 2024-08-20
+#!desc=最后更新时间 2024-10-07
 #!system=ios
 #!category=🍌 楼兰
 
@@ -16,12 +16,20 @@ B站每日任务 = type=cron,cronexp=11 0 * * *,script-path=https://raw.githubus
 # > 蜜雪冰城
 蜜雪冰城 = type=cron,cronexp=15 0 * * *,timeout=60,script-path=https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js
 # > 龙湖天街
-龙湖天街 = type=cron,cronexp=15 0 * * *,timeout=60,script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/lhtj/lhtj.js, timeout=60
-# > 百度贴吧
-百度贴吧 = type=cron,cronexp=0 2 0 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_signin.js,script-update-interval=0,timeout=60
+龙湖天街 = type=cron,cronexp=8 0 * * *,timeout=60,script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/lhtj/lhtj.js, timeout=60
 # > 顺丰速运
-顺丰速运 = type=cron,cronexp=30 6 0 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/sfexpress/sfexpress.js,script-update-interval=0,timeout=30
-# > Boxjs备份
-# 数据备份 = type=cron,cronexp=0 50 23 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/dompling/Script/master/gist/backup.js,script-update-interval=0,,script-update-interval=0,timeout=60
-# > SUB订阅同步
-订阅同步 = type=cron,cronexp=30 50 23 * * *,wake-system=1,script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/cron-sync-artifacts.min.js,script-update-interval=0,timeout=60
+顺丰速运 = type=cron,cronexp=6 0 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/sfexpress/sfexpress.js,script-update-interval=0,timeout=30
+# > 阿里云盘
+阿里云盘签到 = type=cron, cronexp=11 0 * * *, script-path=https://gist.githubusercontent.com/Sliverkiss/33800a98dcd029ba09f8b6fc6f0f5162/raw/aliyun.js, timeout=300
+# > 夸克网盘
+夸克网盘 = type=cron, cronexp=10 0 * * *, script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, timeout=300
+# > 晓晓优选
+晓晓优选 = type=cron, cronexp=1 0 * * *, script-path=https://gist.githubusercontent.com/Sliverkiss/991a81be1fc8cf2a1937432be68f5521/raw/xxyx.js, timeout=300
+# > 胖乖生活
+胖乖生活 = type=cron, cronexp=2 0 * * *, script-path=https://gist.githubusercontent.com/Sliverkiss/845cf469e4762afdc83c3949be006609/raw/pgsh.js, timeout=300
+# > 奈雪
+奈雪点单签到 = type=cron, cronexp=4 0 * * *, script-path=https://gist.githubusercontent.com/Sliverkiss/4d0e9572b99530b7cb0e7298622aa2a9/raw/naixue.js, timeout=300
+# > 泡泡玛特
+泡泡玛特签到 = type=cron, cronexp=5 0 * * *, script-path=https://gist.githubusercontent.com/Sliverkiss/3e1fe82fa18dbcff9b2ae7fdad7596a6/raw/ppmt.js, timeout=300
+# > 小蚕
+小蚕霸王餐 = type=cron, cronexp=6 0 * * *, script-path=https://gist.githubusercontent.com/Sliverkiss/250a02315f0a2c99f42da3b3573375c8/raw/xcbwc.js, timeout=300
