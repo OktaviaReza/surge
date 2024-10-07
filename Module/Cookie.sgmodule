@@ -19,7 +19,6 @@ B站(网页) = type=http-request,pattern=^https?:\/\/m\.bilibili\.com/$,script-p
 
 # > 龙湖天街获取Cookie (gw2c-hw-open.longfor.com)
 龙湖天街 = type=http-request, pattern=^https?:\/\/gw2c\-hw\-open\.longfor\.com\/lmarketing\-task\-api\-mvc\-prod\/openapi\/task\/v1\/signature\/clock, script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/lhtj/lhtj.js, timeout=60
-# > BiliBiliCookie获取
 
 # > 奶茶多合一 （webapi2.qmai.cn, webapi.qmai.cn, qmwebapi.qmai.cn）
 奶茶获取token = type=http-response, pattern=^https:\/\/(webapi|webapi2)\.qmai\.cn\/web\/seller\/(oauth\/flash-sale-login|account\/login-minp), script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js, requires-body=true, timeout=60
@@ -33,14 +32,19 @@ B站(网页) = type=http-request,pattern=^https?:\/\/m\.bilibili\.com/$,script-p
 夸克网盘福利日常收录任务 = type=http-response, pattern=^https:\/\/coral2\.quark\.cn\/task\/trigger, script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, requires-body=true, timeout=60
 夸克网盘空间签到收录任务 = type=http-request, pattern=^https:\/\/coral2\.quark\.cn\/quark\/(carbon|welfare)\/(v1|v2)\/signIn, script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, requires-body=true, timeout=60
 夸克网盘睡眠打卡收录任务 = type=http-request, pattern=^https:\/\/coral2\.quark\.cn\/quark\/welfare\/v2\/sleep\/trigger, script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, requires-body=true, timeout=60
+
 # > 晓晓优选 (xxyx-client-api.xiaoxiaoyouxuan.com)
 晓晓优选 = type=http-response, pattern=^https:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/my, script-path=https://gist.githubusercontent.com/Sliverkiss/991a81be1fc8cf2a1937432be68f5521/raw/xxyx.js, requires-body=true, timeout=60
+
 # > 胖乖生活 (userapi.qiekj.com)
 胖乖生活 = type=http-request, pattern=^https:\/\/userapi\.qiekj\.com\/wechat\/unionId\/login, script-path=https://gist.githubusercontent.com/Sliverkiss/845cf469e4762afdc83c3949be006609/raw/pgsh.js, requires-body=true, timeout=60
+
 # > 奈雪 (tm-web.pin-dao.cn)
 奈雪点单获取token = type=http-request, pattern=^https:\/\/tm-web\.pin-dao\.cn\/user\/base-userinfo, script-path=https://gist.githubusercontent.com/Sliverkiss/4d0e9572b99530b7cb0e7298622aa2a9/raw/naixue.js, requires-body=true, timeout=60
+
 # > 泡泡玛特 (popvip.paquapp.com)
 泡泡玛特获取token = type=http-response, pattern=^https:\/\/popvip\.paquapp\.com\/miniapp\/v2\/wechat\/getUserInfo, script-path=https://gist.githubusercontent.com/Sliverkiss/3e1fe82fa18dbcff9b2ae7fdad7596a6/raw/ppmt.js, requires-body=true, timeout=60
+
 # > 小蚕霸王餐 (gw.xiaocantech.com)
 小蚕霸王餐 = type=http-response, pattern=^https:\/\/gw\.xiaocantech\.com\/rpc, script-path=https://gist.githubusercontent.com/Sliverkiss/250a02315f0a2c99f42da3b3573375c8/raw/xcbwc.js, requires-body=true, timeout=60
 
