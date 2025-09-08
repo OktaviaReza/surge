@@ -1,0 +1,16 @@
+#!name=emby_0.1分流
+#!desc=分流选择支持的地区
+#!author=楼兰
+#!raw-url=https://github.com/fmz200/wool_scripts/raw/main/Loon/rule/RedBook.list
+
+#!date=2025-09-08
+#############################################
+
+
+# 好鸭
+DOMAIN-SUFFIX,iris.niceduck.lol // 好鸭emby
+DOMAIN-SUFFIX,apac.irisnb.com // 好鸭emby
+DOMAIN-SUFFIX,ustream.irisnb.com // 好鸭emby
+DOMAIN-SUFFIX,iris4837.5203166.xyz // 好鸭emby
+DOMAIN-SUFFIX,irisus.5203166.xyz // 好鸭emby
+
