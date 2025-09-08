@@ -1,0 +1,45 @@
+#!name=emby分流
+#!desc=分流选择支持的地区
+#!author=楼兰
+#!raw-url=https://github.com/fmz200/wool_scripts/raw/main/Loon/rule/RedBook.list
+
+#!date=2025-09-08
+#############################################
+
+
+DOMAIN-SUFFIX,bai.yezi.my 
+DOMAIN-SUFFIX,bai1.yezi.my 
+DOMAIN-SUFFIX,bai2.yezi.my 
+DOMAIN-SUFFIX,bai3.yezi.my 
+DOMAIN-SUFFIX,gm.yezi.my // 叶子emby
+DOMAIN-SUFFIX,staryuki.com // 星尘
+DOMAIN-SUFFIX,beebi.org // 比比
+DOMAIN-SUFFIX,emby.wenjian.de // 稳健
+DOMAIN-SUFFIX,cn2gias.uk // 守候
+DOMAIN-SUFFIX,nangua.de // 南瓜
+DOMAIN-SUFFIX,tufei.de // 土匪
+DOMAIN-SUFFIX,zoxfree.3767483.xyz // ZOX
+DOMAIN-SUFFIX,ciallo.party // 兔子 0°
+DOMAIN-SUFFIX,cf.5msky.com // MSKY
+DOMAIN-SUFFIX,onatoshi.114514.quest // Doubon
+DOMAIN-SUFFIX,playz.mjji.de // PlayZ Emby
+DOMAIN-SUFFIX,dpxcdn.feiyue.lol
+DOMAIN-SUFFIX,dpx.feiyue.lol // 地平线emby
+DOMAIN-SUFFIX,c1.staryuki.me 
+DOMAIN-SUFFIX,c2.staryuki.me 
+DOMAIN-SUFFIX,cf-star1.staryuki.me
+DOMAIN-SUFFIX,eo-star.staryuki.com
+DOMAIN-SUFFIX,fast-1.staryuki.me.kiven.cc 
+DOMAIN-SUFFIX,fast-v6.staryuki.me.kiven.cc
+DOMAIN-SUFFIX,de1.staryuki.me 
+DOMAIN-SUFFIX,de2.staryuki.me 
+DOMAIN-SUFFIX,s1.staryuki.me
+DOMAIN-SUFFIX,dpx.feiyue.lol 
+DOMAIN-SUFFIX,public.shrekmedia.org
+DOMAIN-SUFFIX,pub1.emby.wtf
+DOMAIN-SUFFIX,pub2.emby.wtf
+DOMAIN-SUFFIX,pub3.emby.wtf
+
+
+
+
