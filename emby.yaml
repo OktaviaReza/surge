@@ -1,0 +1,53 @@
+#!name=emby分流
+#!desc=分流选择支持的地区
+#!author=楼兰
+#!raw-url=https://raw.githubusercontent.com/OktaviaReza/surge/refs/heads/master/emby.list
+
+#!date=2025-09-08
+domain_suffix_set:
+  - emby1.525778.xyz
+  - shayu.wuyan.qzz.io
+  - emby.cn2gias.uk
+  - server2.cn2gias.uk
+  - emby.istyboe.top
+  - emby01.cn2gias.uk
+  - link00.okemby.org
+  - link01.okemby.org
+  - nay.007.us.kg
+  - emby.kongcheng666.dpdns.org
+  - bai.yezi.my 
+  - bai1.yezi.my 
+  - bai2.yezi.my 
+  - bai3.yezi.my 
+  - gm.yezi.my // 叶子emby
+  - staryuki.com // 星尘
+  - beebi.org // 比比
+  - emby.wenjian.de // 稳健
+  - cn2gias.uk // 守候
+  - nangua.de // 南瓜
+  - tufei.de // 土匪
+  - zoxfree.3767483.xyz // ZOX
+  - ciallo.party // 兔子 0°
+  - cf.5msky.com // MSKY
+  - onatoshi.114514.quest // Doubon
+  - playz.mjji.de // PlayZ Emby
+  - dpxcdn.feiyue.lol
+  - dpx.feiyue.lol // 地平线emby
+  - c1.staryuki.me 
+  - c2.staryuki.me 
+  - cf-star1.staryuki.me
+  - eo-star.staryuki.com
+  - fast-1.staryuki.me.kiven.cc 
+  - fast-v6.staryuki.me.kiven.cc
+  - de1.staryuki.me 
+  - de2.staryuki.me 
+  - s1.staryuki.me
+  - dpx.feiyue.lol 
+  - public.shrekmedia.org
+  - pub1.emby.wtf
+  - pub2.emby.wtf
+  - pub3.emby.wtf
+
+
+
+
