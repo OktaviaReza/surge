@@ -1,0 +1,87 @@
+#!name=AI分流合集
+#!desc=选择支持的地区
+
+#!date=2025-10-03 21:12:08
+#############################################
+domain_suffix_set:
+# OpenAI ChatGPT
+  - chatgpt.livekit.cloud
+  - host.livekit.cloud
+  - turn.livekit.cloud
+  - openai.com.cdn.cloudflare.net
+  - openaiapi-site.azureedge.net
+  - openaicomproductionae4b.blob.core.windows.net
+  - production-openaicom-storage.azureedge.net
+  - chat.com
+  - chatgpt.com
+  - oaistatic.com
+  - oaiusercontent.com
+  - openai.com
+  - sora.com
+
+# Apple Intelligence
+  - apple-relay.apple.com,Proxy
+  - apple-relay.fastly-edge.com,Proxy
+  - apple-relay.cloudflare.com,Proxy
+  - gateway.icloud.com,Proxy
+  - guzzoni.apple.com,Proxy
+  - cp4.cloudflare.com,Proxy
+  - gspe1-ssl.ls.apple.com,Proxy
+  - apps.mzstatic.com,Proxy
+
+# GitHub Copilot
+  - api.githubcopilot.com
+  - copilot-proxy.githubusercontent.com
+  - copilot.microsoft.com
+  - sydney.bing.com
+  - githubcopilot.com
+
+# Google Gemini
+  - ai.google.dev
+  - aida.googleapis.com
+  - aistudio.google.com
+  - alkalicore-pa.clients6.google.com
+  - alkalimakersuite-pa.clients6.google.com
+  - bard.google.com
+  - deepmind.com
+  - deepmind.google
+  - geller-pa.googleapis.com
+  - gemini.google.com
+  - generativeai.google
+  - generativelanguage.googleapis.com
+  - makersuite.google.com
+  - proactivebackend-pa.googleapis.com
+
+# Anthropic Claude
+  - anthropic.com
+  - claude.ai
+  - claudeusercontent.com
+
+# JetBrains AI
+  - grazie.ai
+  - grazie.aws.intellij.net
+  - jetbrains.ai
+
+# Meta AI
+  - imagine.meta.com
+  - meta.ai
+
+# Perplexity AI
+  - pplx.ai
+  - perplexity.ai
+  - perplexity.com
+
+# Mistral AI
+  - chat.mistral.ai
+  - console.mistral.ai
+  - mistral.ai
+
+# Grok AI
+  - api.x.ai
+  - x.ai
+  - grok.com
+
+# Trae AI
+  - trae-api-sg.mchost.guru
+  - trae.ai
+
