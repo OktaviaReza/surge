@@ -1,0 +1,36 @@
+#!name = Loon 插件合集
+#!desc = 包含可独立开关的 App 功能插件
+#!author = Loon Plugin Collection
+#!type = normal
+[Argument]
+wps_enabled = switch,true,tag=WPS 签到,desc=启用 WPS Cookie 抓取与每日签到
+wps_capture_enabled = switch,false,tag=WPS Cookie 抓取,desc=启用 WPS 请求 Cookie 抓取
+qqmusic_enabled = switch,true,tag=QQ 音乐签到,desc=启用 QQ 音乐 Cookie 抓取与每日签到
+qqmusic_capture_enabled = switch,false,tag=QQ 音乐 Cookie 抓取,desc=启用 QQ 音乐请求 Cookie 抓取
+mixc_enabled = switch,true,tag=一点万象签到,desc=启用一点万象 Cookie 抓取与每日签到
+mixc_capture_enabled = switch,false,tag=一点万象 Cookie 抓取,desc=启用一点万象请求 Cookie 抓取
+popmart_enabled = switch,true,tag=泡泡玛特签到,desc=启用泡泡玛特 Cookie 抓取与每日签到
+popmart_capture_enabled = switch,false,tag=泡泡玛特 Cookie 抓取,desc=启用泡泡玛特响应 Cookie 抓取
+miniso_enabled = switch,true,tag=名创优品签到,desc=启用名创优品 Cookie 抓取与每日签到
+miniso_capture_enabled = switch,false,tag=名创优品 Cookie 抓取,desc=启用名创优品请求 Cookie 抓取
+lhtj_enabled = switch,true,tag=龙湖天街签到,desc=启用龙湖天街 Cookie 抓取与每日签到
+lhtj_capture_enabled = switch,false,tag=龙湖天街 Cookie 抓取,desc=启用龙湖天街请求 Cookie 抓取
+linli_enabled = switch,true,tag=林里签到兑换,desc=启用林里 Cookie 抓取与签到兑换
+linli_capture_enabled = switch,false,tag=林里 Cookie 抓取,desc=启用林里请求 Cookie 抓取
+[MITM]
+hostname = personal-act.wps.cn,u6.y.qq.com,app.mixcapp.com,popvip.paquapp.com,member-center.miniso.com,gw2c-hw-open.longfor.com,webapi.qmai.cn
+[Script]
+http-request ^https:\/\/personal-act\.wps\.cn\/activity-rubik\/activity\/page_info script-path=https://raw.githubusercontent.com/MaYIHEI/paperclip/refs/heads/main/app/wps/wps.cookie.js,tag=WPS Cookie,requires-body=false,img-url=https://raw.githubusercontent.com/MaYIHEI/pin/refs/heads/main/app/wps.png,enable={wps_capture_enabled}
+cron "0 10 * * *" script-path=https://raw.githubusercontent.com/MaYIHEI/paperclip/refs/heads/main/app/wps/wps.js,tag=WPS 签到,img-url=https://raw.githubusercontent.com/MaYIHEI/pin/refs/heads/main/app/wps.png,enable={wps_enabled}
+http-request ^https:\/\/u6\.y\.qq\.com\/cgi-bin\/musics\.fcg\?.*EveryDaySignLvzScore script-path=https://raw.githubusercontent.com/MaYIHEI/paperclip/refs/heads/main/app/qqmusic/qqmusic.js,tag=QQ 音乐 Cookie,requires-body=false,img-url=https://raw.githubusercontent.com/MaYIHEI/pin/refs/heads/main/app/qqmusic.png,enable={qqmusic_capture_enabled}
+cron "20 9 * * *" script-path=https://raw.githubusercontent.com/MaYIHEI/paperclip/refs/heads/main/app/qqmusic/qqmusic.js,tag=QQ 音乐签到,img-url=https://raw.githubusercontent.com/MaYIHEI/pin/refs/heads/main/app/qqmusic.png,enable={qqmusic_enabled}
+http-request ^https:\/\/app\.mixcapp\.com\/mixc\/api\/v4\/member\/getPersonalData script-path=https://raw.githubusercontent.com/MaYIHEI/paperclip/refs/heads/main/app/newmixc/newmixc.cookie.js,tag=一点万象 Cookie,requires-body=false,img-url=https://raw.githubusercontent.com/MaYIHEI/pin/refs/heads/main/app/newmixc.png,enable={mixc_capture_enabled}
+cron "37 8 * * *" script-path=https://raw.githubusercontent.com/MaYIHEI/paperclip/refs/heads/main/app/newmixc/newmixc.js,tag=一点万象签到,img-url=https://raw.githubusercontent.com/MaYIHEI/pin/refs/heads/main/app/newmixc.png,enable={mixc_enabled}
+http-response ^https:\/\/popvip\.paquapp\.com\/miniapp\/v2\/(svip_lite\/user_info|wechat_message\/template_info) script-path=https://raw.githubusercontent.com/MaYIHEI/paperclip/refs/heads/main/miniprogram/ppmt/ppmt.js,tag=泡泡玛特 Cookie,requires-body=true,img-url=https://raw.githubusercontent.com/MaYIHEI/pin/refs/heads/main/app/popmart.png,enable={popmart_capture_enabled}
+cron "0 9 * * *" script-path=https://raw.githubusercontent.com/MaYIHEI/paperclip/refs/heads/main/miniprogram/ppmt/ppmt.js,tag=泡泡玛特签到,img-url=https://raw.githubusercontent.com/MaYIHEI/pin/refs/heads/main/app/popmart.png,enable={popmart_enabled}
+http-request ^https:\/\/member-center\.miniso\.com\/userinfo\/userinfo\/GetUserInfoV3 script-path=https://raw.githubusercontent.com/MaYIHEI/paperclip/refs/heads/main/miniprogram/miniso/miniso.js,tag=名创优品 Cookie,requires-body=false,img-url=https://raw.githubusercontent.com/MaYIHEI/pin/refs/heads/main/app/miniso.png,enable={miniso_capture_enabled}
+cron "37 7 * * *" script-path=https://raw.githubusercontent.com/MaYIHEI/paperclip/refs/heads/main/miniprogram/miniso/miniso.js,tag=名创优品签到,img-url=https://raw.githubusercontent.com/MaYIHEI/pin/refs/heads/main/app/miniso.png,enable={miniso_enabled}
+http-request ^https:\/\/gw2c-hw-open\.longfor\.com\/lmarketing-task-api-mvc-prod\/openapi\/task\/v1\/signature\/clock$ script-path=https://raw.githubusercontent.com/MaYIHEI/paperclip/refs/heads/main/miniprogram/lhtj/lhtj.js,tag=龙湖天街 Cookie,requires-body=false,img-url=https://raw.githubusercontent.com/MaYIHEI/pin/refs/heads/main/app/lhtj.png,enable={lhtj_capture_enabled}
+cron "0 9 * * *" script-path=https://raw.githubusercontent.com/MaYIHEI/paperclip/refs/heads/main/miniprogram/lhtj/lhtj.js,tag=龙湖天街签到,img-url=https://raw.githubusercontent.com/MaYIHEI/pin/refs/heads/main/app/lhtj.png,enable={lhtj_enabled}
+http-request ^https:\/\/webapi\.qmai\.cn\/web\/(cmk-center\/sign\/(activityInfo|userSignStatistics|userSignRecordCalendar)|catering\/common\/common-info|mall-apiserver\/integral\/(home\/index|item\/goods(\/detail)?)) script-path=https://raw.githubusercontent.com/MaYIHEI/paperclip/refs/heads/main/miniprogram/linli/linli.js,tag=林里 Cookie,requires-body=true,img-url=https://raw.githubusercontent.com/MaYIHEI/pin/refs/heads/main/app/linli.png,enable={linli_capture_enabled}
+cron "0 10 * * *" script-path=https://raw.githubusercontent.com/MaYIHEI/paperclip/refs/heads/main/miniprogram/linli/linli.js,tag=林里签到兑换,img-url=https://raw.githubusercontent.com/MaYIHEI/pin/refs/heads/main/app/linli.png,enable={linli_enabled}
