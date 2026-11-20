@@ -1,9 +1,9 @@
 #!name=🍌 脚本合集
-#!desc=更新时间 2025-04-11
+#!desc=更新时间 2026-11-20
 #!category=🍌 楼兰
 
 [General]
-force-http-engine-hosts = %APPEND% boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net, script.hub, *.script.hub , static.95508.com, mps.95508.com
+force-http-engine-hosts = %APPEND% boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net, script.hub, *.script.hub 
 
 
 [Script]
@@ -12,17 +12,9 @@ force-http-engine-hosts = %APPEND% boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.ne
 BoxJs = type=http-request,pattern=^https?:\/\/(.+\.)?boxjs\.(com|net),script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js, requires-body=true, timeout=120
 
 # ======= F ====== #
-# > 发现精彩  static.95508.com
-^https?:\/\/static\.95508\.com\/mmg\/images\/ads\/.+\/(.+1125?.+2436|.+%.+%|.+_.+_) data-type=text data="{}" status-code=200
-^https?:\/\/static\.95508\.com\/mmg\/ciop\/sysabbr\/cmep\/images\/apppopupads data-type=text data="{}" status-code=200
 
 
 # ======= G ====== #
-# > 广发银行
-# hostname = 
-^https?:\/\/static\.95508\.com\/icppweb\/images\/modelMaterial\/accurate\/202\d{5}\/.*.(png|jpg) data-type=text data=" " status-code=200
-^https?:\/\/static\.95508\.com\/icppweb\/images\/modelMaterial\/advertising\/202\d{5}\/.*.(png|jpg) data-type=text data=" " status-code=200
-^https?:\/\/mps\.95508\.com\/mps\/club\/cardPortals\/adv\/\d{25}\.(png|jpg) data-type=tiny-gif status-code=200
 
 
 # ======= S ====== #
