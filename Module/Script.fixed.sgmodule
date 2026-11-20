@@ -1,0 +1,43 @@
+#!name=🍌 脚本合集
+#!desc=BoxJs / Script Hub / Sub-Store / Vvebo 脚本合集；需先开启 MITM 主开关并信任根证书；模块参数表需较新版本 Surge（Mac 5.5.0+，iOS 建议 5.10+）
+#!category=🍌 楼兰
+#!arguments=Notify:开启通知
+#!arguments-desc=Script Hub 通知设置，可取 开启通知 / 关闭通知 / 跟随链接；取值请勿包含逗号、空格、& 或 =
+
+# 修订说明（2026-11-20）：
+# 1. 补全 #!arguments 声明，使 {{{Notify}}} 占位符能被替换（原文件缺失，通知设置恒为无效值）。
+# 2. pattern 增加主机与查询参数边界，去掉 JS 正则字面量带来的多余斜杠转义。
+# 3. requires-body 与 max-size 成对配置；统一布尔写法、timeout 与 script-update-interval。
+# 4. 脚本名改为唯一 ASCII 名；脚本定义顺序保持不变（Surge 只执行第一个匹配的 http-request 脚本）。
+# 5. 清理 MITM 列表中的空格、行尾逗号与无对应脚本的 security.wechat.com。
+# 6. 未添加 [Rule] 段：本模块由 http-request 脚本在规则匹配前直接返回本地响应，无需额外路由规则。
+# 7. 远程脚本 URL 沿用上游 beta / main / latest 路径；如需长期稳定，建议自行锁定 commit 或改用 jsDelivr CDN。
+# 8. argument 按上游脚本的解析方式（$argument.split('&') 再 split('=')）保持无引号写法；Notify 取值不含逗号与空格。
+# 9. vvebo_response 使用 max-size=-1；若 iOS 出现内存告警，可改回 5242880 等有限值。
+
+[General]
+# force-http-engine-hosts 的条目不带 :port 时仅作用于 80 端口，HTTPS 流量依赖 [MITM] 覆盖。
+# 如需覆盖所有端口，可改用 script.hub:0, *.script.hub:0, sub.store:0 这类写法。
+force-http-engine-hosts = %APPEND% boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net, script.hub, *.script.hub, sub.store
+
+[Script]
+# > BoxJs：chavy.boxjs.js 的 /api/save 与订阅导入会读取 $request.body，必须保留 requires-body
+boxjs_main = type=http-request,pattern=^https?://(.+\.)?boxjs\.(com|net)(?:[/:?#]|$),script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js,requires-body=true,max-size=5242880,timeout=30,script-update-interval=86400
+
+# > Script Hub：四个脚本只从 $request.url 取内容，不读取请求体，故不开启 requires-body
+scripthub_frontend = type=http-request,pattern=^https?://script\.hub/(?:edit/|reload(?:[/?#]|$)|[?#]|$),script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/script-hub.beta.js,timeout=30,script-update-interval=86400
+scripthub_rewrite_parser = type=http-request,pattern=^https?://script\.hub/file/_start_/.+type=(?:qx-rewrite|surge-module|loon-plugin|all-module)(?:[&#]|$),script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/Rewrite-Parser.beta.js,timeout=30,argument=Notify={{{Notify}}},script-update-interval=86400
+scripthub_rule_parser = type=http-request,pattern=^https?://script\.hub/file/_start_/.+type=rule-set(?:[&#]|$),script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/rule-parser.beta.js,timeout=30,argument=Notify={{{Notify}}},script-update-interval=86400
+scripthub_script_converter = type=http-request,pattern=^https?://script\.hub/convert/,script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/script-converter.beta.js,timeout=30,script-update-interval=86400
+
+# > Sub-Store：保留上游模块的 requires-body 设置以兼容其 POST 处理，但补齐 max-size 与 timeout；
+#   两条规则顺序不可调换，精确规则必须在兜底规则之前。
+substore_api = type=http-request,pattern=^https?://sub\.store/(?:download|api/(?:preview|sync|utils/node-info))(?:[/?#]|$),script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-1.min.js,requires-body=true,max-size=5242880,timeout=60,script-update-interval=86400
+substore_fallback = type=http-request,pattern=^https?://sub\.store(?:[/?#]|$),script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-0.min.js,requires-body=true,max-size=5242880,timeout=30,script-update-interval=86400
+
+# > Vvebo：vv.js 请求分支只改写 URL，无需 body；响应分支需 JSON.parse($response.body)
+vvebo_request = type=http-request,pattern=^https://api\.weibo\.cn/2/(?:users/show\?|statuses/user_timeline\?),script-path=https://raw.githubusercontent.com/Keywos/rule/main/JS/vv.js,timeout=10,script-update-interval=86400
+vvebo_response = type=http-response,pattern=^https://api\.weibo\.cn/2/profile/statuses/tab\?,script-path=https://raw.githubusercontent.com/Keywos/rule/main/JS/vv.js,requires-body=true,max-size=-1,timeout=10,script-update-interval=86400
+
+[MITM]
+hostname = %APPEND% boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net, api.weibo.cn, script.hub, *.script.hub, sub.store
